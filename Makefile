@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: daniefe2 <daniefe2@student.42lausanne.c    +#+  +:+       +#+         #
+#    By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/01 16:19:39 by daniefe2          #+#    #+#              #
-#    Updated: 2025/03/01 17:01:48 by daniefe2         ###   ########.fr        #
+#    Updated: 2025/03/19 14:06:26 by daniefe2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,13 @@ LIB = -L $(LIBFT_DIR) -lft
 # Source files
 SRCS =	sources/main.c \
 		sources/utils/utils.c \
-		sources/input_verifier.c \
+		sources/utils/parse_numbers.c \
+		sources/input_management/args_verifier.c \
 		lib/get_next_line/get_next_line_utils.c \
 		lib/get_next_line/get_next_line.c \
 
 OBJS = $(SRCS:.c=.o)
-NAME = ps
+NAME = push_swap
 # Ensure libraries are built before linking
 all: libft printf $(NAME)
 $(NAME): $(OBJS)
