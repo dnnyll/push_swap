@@ -6,13 +6,13 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 13:16:19 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/19 14:13:51 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/21 08:04:47 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	parse_numbers(char **argv)
+int	parse_number(char **argv)
 {
 	int	i;
 	int	j;
