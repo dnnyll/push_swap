@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:19:12 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/21 13:27:46 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/22 12:30:16 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	// t_stack	*stack_b;
-	char	**tokens;
+	char **tokens;
 	int i = 0;
 	if (argc == 1)
 		return (0);
@@ -61,6 +61,8 @@ int	main(int argc, char **argv)
 		free_string_array(tokens);
 		argv++;
 	}
+	//sorting
+	free_stack_exit(stack_a, 0);
 	printf("end\n");
 	return (0);
 }

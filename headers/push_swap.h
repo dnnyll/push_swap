@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:33:26 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/21 13:30:49 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/22 12:31:05 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ typedef struct s_stack
 {
 	int				value;
 	struct s_stack	*next;
-}					t_stack;
+}t_stack;
+
 
 //	-=	?????			//////////////////////////////////////////////
 int		ft_isvalid_char(char c);
@@ -32,6 +33,7 @@ void	free_string_array(char **array);
 void	free_stack_exit(t_stack *stack, int error_flag);
 void	stack_add(t_stack **stack, char **input_string);
 int		duplicate_check(t_stack *stack, int value);
+
 
 
 #endif
