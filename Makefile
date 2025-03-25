@@ -6,7 +6,7 @@
 #    By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/01 16:19:39 by daniefe2          #+#    #+#              #
-#    Updated: 2025/03/19 14:06:26 by daniefe2         ###   ########.fr        #
+#    Updated: 2025/03/24 17:48:54 by daniefe2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,14 @@ PRF = -L $(PRINTF_DIR) -lftprintf
 LIB = -L $(LIBFT_DIR) -lft
 # Source files
 SRCS =	sources/main.c \
-		sources/utils/utils.c \
-		sources/utils/parse_numbers.c \
+		sources/utils/utils_stack.c \
+		sources/utils/utils_radix.c \
+		sources/sort_stack_a.c \
+		sources/sort_index.c \
+		sources/operations/push.c \
+		sources/operations/reverse_rotate.c \
+		sources/operations/rotation.c \
+		sources/operations/swap.c \
 		sources/input_management/args_verifier.c \
 		lib/get_next_line/get_next_line_utils.c \
 		lib/get_next_line/get_next_line.c \

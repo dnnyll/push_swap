@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:29:00 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/22 12:31:21 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:30:48 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,8 @@ int	duplicate_check(t_stack *stack, int value)
 	while (stack)
 	{
 		if (stack->value == value)
-		{
-			ft_printf("duplicate\n");
 			return (1);	
-		}
-			stack = stack ->next;
+		stack = stack->next;
 	}
 	return (0);
 }
@@ -36,7 +33,6 @@ t_stack	*get_last_node(t_stack *stack)
 	return (last_node);
 }
 
-
 void	stack_add(t_stack **stack, char **input_string)
 {
 	t_stack	*new_node;
@@ -50,7 +46,7 @@ void	stack_add(t_stack **stack, char **input_string)
 		value = ft_atoi(input_string[i]);
 		if (duplicate_check(*stack, value) == 1)
 		{
-			ft_printf("duplicate free and exit\n");
+			ft_printf("Error: duplicate.\n");
 			free_stack_exit(*stack, 1);
 			exit(0);
 		}
@@ -58,6 +54,7 @@ void	stack_add(t_stack **stack, char **input_string)
 		if (!new_node)
 			free_stack_exit(*stack, 1);
 		new_node->value = value;
+		new_node->index = -1;
 		new_node->next = NULL;
 		ft_printf("input_string[%d]: %s\n", i, input_string[i]);
 		ft_printf("new_node->value = %d\n", new_node->value);

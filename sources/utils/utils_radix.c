@@ -1,45 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_numbers.c                                    :+:      :+:    :+:   */
+/*   utils_radix.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 13:16:19 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/21 08:04:47 by daniefe2         ###   ########.fr       */
+/*   Created: 2025/03/24 12:46:14 by daniefe2          #+#    #+#             */
+/*   Updated: 2025/03/24 17:37:11 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	parse_number(char **argv)
+// finds how many bits are needed to represent the largest number in the stack.
+int	get_max_bits(t_stack *stack)
 {
-	int	i;
-	int	j;
+	int	max_index;
+	int	bits;
 
-	i = 1;
-	j = 0;
-	
-	while (*argv[i])
+	max_index = 0;
+	while (stack)
 	{
-		if (argv[i][j] == ' ')
-		{
-			ft_split(argv[i], ' ');
-			//store value on linked list node
-			// count++;
-			i++;
-		}
-		// else if
-		// {
-		// 	while (argv[i])
-		// 	{
-		// 		ft_atoi(argv[i]);
-		// 		i++;
-		// 	}
-		// }
-		else
-			return (0);
+		if (stack->index > max_index)
+			max_index = stack->index;
+		stack = stack->next;
 	}
-	ft_printf("parse_number ended successfully?!\n");
-	return (1);
+	bits = 0;
+	while ((max_index >> bits) != 0)
+		bits++;
+	return bits;
 }

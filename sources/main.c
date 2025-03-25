@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:19:12 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/22 12:30:16 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/24 16:59:54 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,38 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	// t_stack	*stack_b;
 	char **tokens;
-	int i = 0;
+	// int i = 0;
 	if (argc == 1)
+	{
+		printf("Error: empty argument.\n");
 		return (0);
-	stack_a = NULL;
+	}
+		stack_a = NULL;
 	// stack_b = NULL;
 	argv++;
+	args_verif(argv);
 	while (--argc)
 	{
-		args_verif(argv);
 		tokens = ft_split(*argv, ' ');
-		ft_printf("tokens[%d]: %s\n", i, tokens[i]); 
+		if(!ft_isvalid_integer_str(*tokens))
+		{
+			ft_printf("Error: invalid integer.\n");
+			exit (0);
+		}
+		// ft_printf("tokens[%d]: %s\n", i, tokens[i]); 
 		stack_add(&stack_a, tokens);
 		free_string_array(tokens);
 		argv++;
 	}
+	//this is temporary, needs to be added to the overall sorting mechanism
+	if (is_sorted(&stack_a))
+	{
+		printf("Stack is already sorted.\n");
+		free_stack_exit(stack_a, 0);
+		return (0);
+	}
+	assign_index(stack_a);
+	print_stack(stack_a);
 	//sorting
 	free_stack_exit(stack_a, 0);
 	printf("end\n");

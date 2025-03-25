@@ -6,13 +6,13 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 20:29:47 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/22 11:56:38 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/24 11:05:08 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//verifies if the input contains only valid characters
+//verifies if character is valid
 int	ft_isvalid_char(char c)
 {
 	if (c >= '0' && c <= '9')
@@ -24,6 +24,33 @@ int	ft_isvalid_char(char c)
 	else
 		return(0);
 }
+//	checks if INT_MIN or INT_MAX have been reached
+//	makes sure that the - sign is placed at the beginning of a number
+int	ft_isvalid_integer_str(char *str)
+{
+	int	index;
+	int	length;
+
+	index = 0;
+	if (str[0] == '-')
+		index++;
+	while (str[index])
+	{
+		if (!ft_isdigit(str[index]))
+			return (0);
+		index++;
+	}
+	length = ft_strlen(str);
+	if ((str[0] != '-' && length > 10) || (str[0] == '-' && length > 11))
+		return (0);
+	if (length == 10 && str[0] != '-' && ft_strncmp(str, "2147483647", 10) > 0)
+		return (0);
+	if (length == 11 && str[0] == '-' && \
+			ft_strncmp(str + 1, "2147483648", 10) > 0)
+		return (0);
+	return (1);
+}
+//	iterates through my input string and verifies if all characters are valid
 int	args_verif(char **argv)
 {
 	ft_printf("entering args_verif..\n");
