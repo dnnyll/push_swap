@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:33:26 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/25 10:36:47 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/25 13:27:36 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,17 @@ void	assign_index(t_stack *stack);
 t_stack	*get_last_node(t_stack *stack);
 int		get_max_bits(t_stack *stack);
 int		get_stack_size(t_stack *stack);
+int		get_max_value(t_stack *stack);
 
+//	-=	algorithm				//////////////////////////////////////////////
+int		sort_small(t_stack *stack_a, t_stack *stack_b);
 int		radix_sort(t_stack **stack_a, t_stack **stack_b);
-
+int 	sort_stack(t_stack *stack_a, t_stack *stack_b);
 
 //	-=	operations				//////////////////////////////////////////////
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
+void	push_smallest_to_stack_b(t_stack **stack_a, t_stack **stack_b);
 int		reverse_rotate(t_stack **stack);
 void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
@@ -55,5 +59,8 @@ int		rotate(t_stack **stack);
 void	ra(t_stack **stack_a);
 void	rb(t_stack **stack_b);
 void	rr(t_stack **stack_a, t_stack **stack_b);
+void	sa(t_stack **stack_a);
+void	sb(t_stack **stack_b);
+void	ss(t_stack **stack_a, t_stack **stack_b);
 
 #endif

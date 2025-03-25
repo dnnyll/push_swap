@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:46:14 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/25 11:22:15 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/25 11:35:48 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,15 @@ int	get_stack_size(t_stack *stack)
 // returns the higher value in the stack
 int	get_max_value(t_stack *stack)
 {
-	int	max_value;
+	int max_value;
 
-	max_value = 0;
+	max_value = stack->value;
 	while (stack)
 	{
-		if (stack > stack->next)
-			max_value = stack;
+		if (stack->value > max_value)
+			max_value = stack->value;
+		stack = stack->next;
 	}
 	return (max_value);
 }
+
