@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:19:12 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/24 16:59:54 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/25 10:33:24 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	free_stack_exit(t_stack *stack, int error_flag)
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
-	// t_stack	*stack_b;
+	t_stack	*stack_b;
 	char **tokens;
 	// int i = 0;
 	if (argc == 1)
@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 		stack_a = NULL;
-	// stack_b = NULL;
+	stack_b = NULL;
 	argv++;
 	args_verif(argv);
 	while (--argc)
@@ -78,6 +78,7 @@ int	main(int argc, char **argv)
 	}
 	assign_index(stack_a);
 	print_stack(stack_a);
+	radix_sort(&stack_a, &stack_b);
 	//sorting
 	free_stack_exit(stack_a, 0);
 	printf("end\n");

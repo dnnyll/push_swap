@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:33:26 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/24 17:47:07 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/25 10:36:47 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ int		duplicate_check(t_stack *stack, int value);
 int		is_sorted(t_stack **stack_a);
 void	print_stack(t_stack *stack);
 void	assign_index(t_stack *stack);
-int		get_max_bits(t_stack *stack);
 t_stack	*get_last_node(t_stack *stack);
+int		get_max_bits(t_stack *stack);
+int		get_stack_size(t_stack *stack);
+
+int		radix_sort(t_stack **stack_a, t_stack **stack_b);
 
 
 //	-=	operations				//////////////////////////////////////////////
