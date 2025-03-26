@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:46:14 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/25 11:35:48 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:29:31 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,4 @@ int	get_max_value(t_stack *stack)
 	return (max_value);
 }
 
+ 

@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 09:24:16 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/25 14:27:53 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/26 10:37:03 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,20 @@ int	sort_small(t_stack *stack_a, t_stack *stack_b)
 	{
 		max_value = get_max_value(stack_a);
 		if (stack_a->value == max_value)
+		{
+			ft_printf("case 1.\n");
 			ra(&stack_a);
+		}
 		else if (stack_a->next->value == max_value)
+		{
+			ft_printf("case 2.\n");
 			rra(&stack_a);
+		}
 		if (stack_a->value > stack_a->next->value)
+		{
+			ft_printf("case 3.\n");
 			sa(&stack_a);
+		}
 	}
 	else if (stack_size == 4 || stack_size == 5)
 	{
@@ -81,7 +90,8 @@ int	radix_sort(t_stack **stack_a, t_stack **stack_b)
 			while (*stack_b)
 				pa(stack_a, stack_b);
 		}
-		
+		ft_printf("Finnishing Moving elements back to stack_a.\n");
+
 		// while (stack_b != 0)
 		// {
 		// 	ft_printf("3\n");

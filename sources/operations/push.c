@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:23:56 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/25 13:48:00 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:32:33 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	push_smallest_to_stack_b(t_stack **stack_a, t_stack **stack_b)
 	t_stack *smallest = *stack_a;
 
 	// Find the smallest value in stack_a
-	while (temp) {
+	while (temp)
+	{
 		if (temp->value < smallest->value)
 			smallest = temp;
 		temp = temp->next;
