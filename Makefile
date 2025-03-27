@@ -6,7 +6,7 @@
 #    By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/01 16:19:39 by daniefe2          #+#    #+#              #
-#    Updated: 2025/03/25 13:06:33 by daniefe2         ###   ########.fr        #
+#    Updated: 2025/03/26 12:07:05 by daniefe2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ LIB = -L $(LIBFT_DIR) -lft
 # Source files
 SRCS =	sources/main.c \
 		sources/algorithm/sort_radix.c \
+		sources/utils/utils_printers.c \
 		sources/utils/utils_stack.c \
 		sources/utils/utils_radix.c \
 		sources/sort_stack_a.c \

@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:19:12 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/25 13:29:51 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/26 13:30:05 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int	main(int argc, char **argv)
 	// radix_sort(&stack_a, &stack_b);
 	sort_stack(stack_a, stack_b);
 	free_stack_exit(stack_a, 0);
-	printf("end\n");
 	return (0);
 }
 	

@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:23:56 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/25 16:32:33 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/26 12:15:46 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 	moved_node->next = *stack_a;
 	*stack_a = moved_node;
 	ft_printf("pa\n");
+	// print_stacks(*stack_a, *stack_b);
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
@@ -36,6 +37,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 	moved_node->next = *stack_b;
 	*stack_b = moved_node;
 	ft_printf("pb\n");
+	// print_stacks(*stack_a, *stack_b);
 }
 
 void	push_smallest_to_stack_b(t_stack **stack_a, t_stack **stack_b)
@@ -52,4 +54,5 @@ void	push_smallest_to_stack_b(t_stack **stack_a, t_stack **stack_b)
 	}
 // Push smallest value to stack_b
 	pb(stack_a, stack_b);
+	// print_stacks(*stack_a, *stack_b);
 }

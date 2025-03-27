@@ -6,14 +6,15 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:33:26 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/25 13:27:36 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/26 13:41:24 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSHS_SWAP_H
 
-# include <string.h>
+# include <unistd.h>
+# include <stdlib.h>
 # include "../lib/get_next_line/get_next_line.h"
 # include "../lib/ft_printf/ft_printf.h"
 # include "../lib/Libft/libft.h"
@@ -41,6 +42,10 @@ t_stack	*get_last_node(t_stack *stack);
 int		get_max_bits(t_stack *stack);
 int		get_stack_size(t_stack *stack);
 int		get_max_value(t_stack *stack);
+void print_stack_a(t_stack *stack);
+void print_stacks(t_stack *stack_a, t_stack *stack_b);
+int get_max_value_index(t_stack *stack);
+
 
 //	-=	algorithm				//////////////////////////////////////////////
 int		sort_small(t_stack *stack_a, t_stack *stack_b);

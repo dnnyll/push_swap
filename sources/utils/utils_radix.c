@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:46:14 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/25 16:29:31 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/26 13:15:34 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,37 @@ int	get_stack_size(t_stack *stack)
 	}
 	return (count);
 }
-// returns the higher value in the stack
-int	get_max_value(t_stack *stack)
-{
-	int max_value;
 
-	max_value = stack->value;
+// returns the higher value in the stack
+int get_max_value_index(t_stack *stack)
+{
+	int max_value_index = stack->index;  // Start with the first element's index
+	int max_value = stack->value;         // Start with the first element's value
+
 	while (stack)
 	{
-		if (stack->value > max_value)
-			max_value = stack->value;
+		if (stack->value > max_value)  // If the current node's value is greater than the max value
+		{
+			max_value = stack->value; // Update max value
+			max_value_index = stack->index;  // Update the index of the max value
+		}
 		stack = stack->next;
 	}
-	return (max_value);
+	return (max_value_index);
 }
+
+// int	get_max_value(t_stack *stack)
+// {
+// 	int max_value;
+
+// 	max_value = stack->value;
+// 	while (stack)
+// 	{
+// 		if (stack->value > max_value)
+// 			max_value = stack->value;
+// 		stack = stack->next;
+// 	}
+// 	return (max_value);
+// }
 
  
