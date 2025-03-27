@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 12:06:11 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/26 13:34:06 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/27 12:06:30 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,21 @@ void print_stack_a(t_stack *stack)
 }
 void print_stacks(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack *temp_a = stack_a;
-	t_stack *temp_b = stack_b;
+    t_stack *temp_a = stack_a;
+    t_stack *temp_b = stack_b;
 
-	ft_printf("\nStack A:\n");
-	while (temp_a)
-	{
-		ft_printf("Value: %d, Index: %d\n", temp_a->value, temp_a->index);
-		temp_a = temp_a->next;
-	}
+    ft_printf("\nStack A (Size: %d):\n", get_stack_size(stack_a));
+    while (temp_a)
+    {
+        ft_printf("Value: %d, Index: %d\n", temp_a->value, temp_a->index);
+        temp_a = temp_a->next;
+    }
 
-	ft_printf("\nStack B:\n");
-	while (temp_b)
-	{
-		ft_printf("Value: %d, Index: %d\n", temp_b->value, temp_b->index);
-		temp_b = temp_b->next;
-	}
-	ft_printf("--------------------\n");
+    ft_printf("\nStack B (Size: %d):\n", get_stack_size(stack_b));
+    while (temp_b)
+    {
+        ft_printf("Value: %d, Index: %d\n", temp_b->value, temp_b->index);
+        temp_b = temp_b->next;
+    }
+    ft_printf("--------------------\n");
 }

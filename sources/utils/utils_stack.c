@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:29:00 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/26 13:32:59 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/27 11:58:19 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ void	stack_add(t_stack **stack, char **input_string)
 		new_node->value = value;
 		new_node->index = -1;
 		new_node->next = NULL;
-		ft_printf("input_string[%d]: %s\n", i, input_string[i]);
-		ft_printf("new_node->value = %d\n", new_node->value);
 		if (!*stack)
 			*stack = new_node;
 		else

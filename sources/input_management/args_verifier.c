@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 20:29:47 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/24 11:05:08 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/27 11:28:24 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int	ft_isvalid_integer_str(char *str)
 //	iterates through my input string and verifies if all characters are valid
 int	args_verif(char **argv)
 {
-	ft_printf("entering args_verif..\n");
 	int	i;
 	int	j;
 

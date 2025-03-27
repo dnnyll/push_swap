@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:19:12 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/26 13:30:05 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/27 14:11:56 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	char **tokens;
-	// int i = 0;
+
 	if (argc == 1)
 	{
 		printf("Error: empty argument.\n");
@@ -64,12 +64,10 @@ int	main(int argc, char **argv)
 			ft_printf("Error: invalid integer.\n");
 			exit (0);
 		}
-		// ft_printf("tokens[%d]: %s\n", i, tokens[i]); 
 		stack_add(&stack_a, tokens);
 		free_string_array(tokens);
 		argv++;
 	}
-	//this is temporary, needs to be added to the overall sorting mechanism
 	if (is_sorted(&stack_a))
 	{
 		printf("Stack is already sorted.\n");
@@ -77,9 +75,8 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	assign_index(stack_a);
-	print_stack(stack_a);
-	// radix_sort(&stack_a, &stack_b);
 	sort_stack(stack_a, stack_b);
+	// print_stacks(stack_a, stack_b);
 	free_stack_exit(stack_a, 0);
 	return (0);
 }

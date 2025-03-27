@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:33:26 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/26 13:41:24 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/27 14:11:25 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,19 @@ t_stack	*get_last_node(t_stack *stack);
 int		get_max_bits(t_stack *stack);
 int		get_stack_size(t_stack *stack);
 int		get_max_value(t_stack *stack);
-void print_stack_a(t_stack *stack);
-void print_stacks(t_stack *stack_a, t_stack *stack_b);
-int get_max_value_index(t_stack *stack);
+void 	print_stack_a(t_stack *stack);
+void 	print_stacks(t_stack *stack_a, t_stack *stack_b);
+int 	get_max_value_index(t_stack *stack);
 
 
 //	-=	algorithm				//////////////////////////////////////////////
-int		sort_small(t_stack *stack_a, t_stack *stack_b);
+int		sort_small(t_stack **stack_a, t_stack **stack_b);
 int		radix_sort(t_stack **stack_a, t_stack **stack_b);
 int 	sort_stack(t_stack *stack_a, t_stack *stack_b);
+void sort_two_elements(t_stack **stack_a);
+void sort_three_elements(t_stack **stack_a);
+void sort_four_five_elements(t_stack **stack_a, t_stack **stack_b);
+int get_min_index(t_stack *stack);
 
 //	-=	operations				//////////////////////////////////////////////
 void	pa(t_stack **stack_a, t_stack **stack_b);
