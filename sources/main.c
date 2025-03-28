@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:19:12 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/27 14:11:56 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/28 14:34:26 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	free_string_array(char **array)
 		temp++;
 	}
 	if (array)
-		free(array);
+		free (array);
 }
 
 void	free_stack_exit(t_stack *stack, int error_flag)
@@ -45,8 +45,10 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	char **tokens;
+	char	**tokens;
+	int		token_count;
 
+	token_count = 0;
 	if (argc == 1)
 	{
 		printf("Error: empty argument.\n");
@@ -59,24 +61,30 @@ int	main(int argc, char **argv)
 	while (--argc)
 	{
 		tokens = ft_split(*argv, ' ');
-		if(!ft_isvalid_integer_str(*tokens))
+		if (!tokens || !tokens[0])
 		{
-			ft_printf("Error: invalid integer.\n");
-			exit (0);
+			free_string_array(tokens);
+			exit(1);
 		}
+		if(!ft_isvalid_integer_str(*tokens))
+			exit (0);
 		stack_add(&stack_a, tokens);
 		free_string_array(tokens);
 		argv++;
+		token_count++;
+	}
+	if (token_count == 1)
+	{
+		free_stack_exit(stack_a, 0);
+		return (0);
 	}
 	if (is_sorted(&stack_a))
 	{
-		printf("Stack is already sorted.\n");
 		free_stack_exit(stack_a, 0);
 		return (0);
 	}
 	assign_index(stack_a);
 	sort_stack(stack_a, stack_b);
-	// print_stacks(stack_a, stack_b);
 	free_stack_exit(stack_a, 0);
 	return (0);
 }

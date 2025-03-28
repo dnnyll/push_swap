@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:39:44 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/26 10:51:33 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/28 13:51:33 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	is_sorted(t_stack **stack_a)
 {
 	t_stack	*current_node;
 
+	if (!stack_a || !*stack_a)
+		return (1);
 	current_node = *stack_a;
 	while (current_node->next)
 	{
