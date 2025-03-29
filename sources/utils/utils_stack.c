@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:29:00 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/27 11:58:19 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/29 09:21:23 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_stack	*get_last_node(t_stack *stack)
 	return (last_node);
 }
 
-void	stack_add(t_stack **stack, char **input_string)
+int	stack_add(t_stack **stack, char **input_string)
 {
 	t_stack	*new_node;
 	t_stack	*last_node;
@@ -46,9 +46,9 @@ void	stack_add(t_stack **stack, char **input_string)
 		value = ft_atoi(input_string[i]);
 		if (duplicate_check(*stack, value) == 1)
 		{
-			ft_printf("Error: duplicate.\n");
-			free_stack_exit(*stack, 1);
-			exit(0);
+			free_string_array(input_string);
+			free_stack_exit(*stack, 0);
+			return (0);
 		}
 		new_node = malloc(sizeof(*new_node));
 		if (!new_node)
@@ -65,5 +65,5 @@ void	stack_add(t_stack **stack, char **input_string)
 		}
 		i++;
 	}
-	// free_stack_exit(*stack, 1);
+	return (1);
 }

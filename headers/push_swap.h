@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:33:26 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/27 14:11:25 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/28 15:46:36 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		ft_isvalid_integer_str(char *str);
 int		args_verif(char **argv);
 void	free_string_array(char **array);
 void	free_stack_exit(t_stack *stack, int error_flag);
-void	stack_add(t_stack **stack, char **input_string);
+int	stack_add(t_stack **stack, char **input_string);
 int		duplicate_check(t_stack *stack, int value);
 int		is_sorted(t_stack **stack_a);
 void	print_stack(t_stack *stack);

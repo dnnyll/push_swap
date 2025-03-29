@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:01:23 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/27 15:35:00 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/29 11:03:51 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ void	sort_three_elements(t_stack **stack_a)
 		sa(stack_a);
 		ra(stack_a);
 	}
-	// ft_printf("printing at sort_three_elements.\n");
-	// print_stacks(*stack_a, NULL);
 }
 
 //	function to sort 4 or 5 elements
@@ -116,93 +114,6 @@ int	radix_sort(t_stack **stack_a, t_stack **stack_b)
 	}
 	return (1);
 }
-//		good version but 1 line too long
-// int	radix_sort(t_stack **stack_a, t_stack **stack_b)
-// {
-// 	int	bit_position;
-// 	int	max_bits;
-// 	int	stack_size;
-// 	int	i;
-// 	t_stack	*current_node;
-
-// 	max_bits = get_max_bits(*stack_a);
-// 	bit_position = 0;
-// 	while (bit_position < max_bits)
-// 	{
-// 		i = 0;
-// 		stack_size = get_stack_size(*stack_a);
-// 		while (i < stack_size)
-// 		{
-// 			current_node = *stack_a;
-// 			if ((current_node->index & (1 << bit_position)) == 0)
-// 				pb(stack_a, stack_b);
-// 			else
-// 				ra(stack_a);
-// 			i++;
-// 		}
-// 		while (*stack_b)
-// 			pa(stack_a, stack_b);
-// 		bit_position += 1;
-// 	}
-// 	return (1);
-// }
-
-
-
-//				version to debug
-// int	radix_sort(t_stack **stack_a, t_stack **stack_b)
-// {
-// 	ft_printf("Calling radix_sort.\n");
-// 	print_stacks(*stack_a, *stack_b);
-// 	int	bit_position;
-// 	int	max_bits;
-// 	int	stack_size;
-// 	int	i;
-// 	t_stack *current_node;
-
-// 	max_bits = get_max_bits(*stack_a);
-// 	ft_printf("Max bits = %d\n", max_bits);
-// 	bit_position = 0;
-// 	while (bit_position < max_bits)
-// 	{
-// 		ft_printf("Processing bit position = %d\n", bit_position);
-// 		i = 0;
-// 		stack_size = get_stack_size(*stack_a);
-// 		ft_printf("Stack size = %d\n", stack_size);
-// 		while (i < stack_size)
-// 		{
-// 			current_node = *stack_a;
-// 			ft_printf("Current node value = %d\n", current_node->value);
-// 			if ((current_node->index & (1 << bit_position)) == 0)
-// 			{
-// 				ft_printf("Pushing value to stack_b. Value = %d\n", current_node->value);
-// 				pb(stack_a, stack_b);
-// 				print_stack_a(*stack_b);
-// 			}
-// 			else
-// 			{
-// 				ft_printf("Rotating stack_a.\n");
-// 				ra(stack_a);
-// 				print_stack_a(*stack_a);
-// 			}
-// 			i++;
-// 		}
-// 		if (*stack_b)
-// 		{
-// 			ft_printf("Moving elements back to stack_a.\n");
-// 			while (*stack_b)
-// 			{
-// 				pa(stack_a, stack_b);
-// 				print_stack_a(*stack_a);
-// 			}
-// 		}
-// 		ft_printf("Finished moving elements back to stack_a.\n");
-
-// 		bit_position += 1;
-// 	}
-// 	print_stacks(*stack_a, *stack_b);
-// 	return (1);
-// }
 
 int sort_stack(t_stack *stack_a, t_stack *stack_b)
 {
