@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:33:26 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/28 15:46:36 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/31 13:39:20 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int 	get_max_value_index(t_stack *stack);
 //	-=	algorithm				//////////////////////////////////////////////
 int		sort_small(t_stack **stack_a, t_stack **stack_b);
 int		radix_sort(t_stack **stack_a, t_stack **stack_b);
-int 	sort_stack(t_stack *stack_a, t_stack *stack_b);
+int 	sort_stack(t_stack **stack_a, t_stack **stack_b);
 void sort_two_elements(t_stack **stack_a);
 void sort_three_elements(t_stack **stack_a);
 void sort_four_five_elements(t_stack **stack_a, t_stack **stack_b);

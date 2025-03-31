@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:26:54 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/26 12:15:55 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/31 13:38:28 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	reverse_rotate(t_stack **stack)
 	while (second_last_node)
 	{
 		if (second_last_node->next == last_node)
+		{
 			second_last_node->next = NULL;
+			break ;
+		}
 		second_last_node = second_last_node->next;
 	}
 	last_node->next = *stack;

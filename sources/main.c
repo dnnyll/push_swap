@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:19:12 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/29 11:28:25 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/31 13:35:57 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	assign_index(stack_a);
-	sort_stack(stack_a, stack_b);
+	sort_stack(&stack_a, &stack_b);
 	free_stack_exit(stack_a, 0);
 	return (0);
 }

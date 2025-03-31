@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:01:23 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/29 11:03:51 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/31 13:42:08 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,20 +115,20 @@ int	radix_sort(t_stack **stack_a, t_stack **stack_b)
 	return (1);
 }
 
-int sort_stack(t_stack *stack_a, t_stack *stack_b)
+int sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	stack_size;
 
-	stack_size = get_stack_size(stack_a);
+	stack_size = get_stack_size(*stack_a);
 	if (stack_size <= 5)
 	{
 		// ft_printf("Stack size is small (<= 5). Using sort_small.\n");
-		sort_small(&stack_a, &stack_b); // This handles sorting for 2-5 elements
+		sort_small(stack_a, stack_b); // This handles sorting for 2-5 elements
 	}
 	else
 	{
 		// ft_printf("Stack size is larger. Using radix_sort.\n");
-		radix_sort(&stack_a, &stack_b);  // This handles larger stacks efficiently
+		radix_sort(stack_a, stack_b);  // This handles larger stacks efficiently
 	}
 	// ft_printf("printing at sort_stack.\n");
 	// print_stacks(stack_a, NULL);
