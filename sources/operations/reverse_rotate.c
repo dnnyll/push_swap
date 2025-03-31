@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:26:54 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/31 13:38:28 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/31 14:39:26 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,16 @@ void	rra(t_stack **stack_a)
 {
 	if (reverse_rotate(stack_a))
 		ft_printf("rra\n");
-	// print_stack_a(*stack_a);
 }
 
 void	rrb(t_stack **stack_b)
 {
 	if (reverse_rotate(stack_b))
 		ft_printf("rrb\n");
-	// print_stack_a(*stack_b);
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	if (reverse_rotate(stack_a) | reverse_rotate(stack_b))
 		ft_printf("rrr\n");
-	// print_stacks(*stack_a, *stack_b);
-
 }

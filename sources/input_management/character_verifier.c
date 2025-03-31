@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_verifier.c                                    :+:      :+:    :+:   */
+/*   character_verifier.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 20:29:47 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/27 11:28:24 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/31 14:37:55 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ int	ft_isvalid_char(char c)
 	if (((c == ' ') || (c >= 9 && c <= 13)))
 		return (1);
 	else
-		return(0);
+		return (0);
 }
+
 //	checks if INT_MIN or INT_MAX have been reached
 //	makes sure that the - sign is placed at the beginning of a number
 int	ft_isvalid_integer_str(char *str)
@@ -50,6 +51,7 @@ int	ft_isvalid_integer_str(char *str)
 		return (0);
 	return (1);
 }
+
 //	iterates through my input string and verifies if all characters are valid
 int	args_verif(char **argv)
 {

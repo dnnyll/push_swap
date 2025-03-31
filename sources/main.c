@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:19:12 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/31 13:35:57 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/31 14:27:26 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,48 +41,44 @@ void	free_stack_exit(t_stack *stack, int error_flag)
 	exit(0);
 }
 
+//	assigning index to every element of the stack to simplify sorting
+//	keeps looping until all nodes have an index
+//	finds the smallest unindexed node
+//	if there are no more unindexed nodes, breaks the loop
+//	assign the next index
+void	assign_index(t_stack *stack)
+{
+	t_stack	*min_node;
+	t_stack	*temp;
+	int		i;
+
+	i = 0;
+	while (1)
+	{
+		min_node = NULL;
+		temp = stack;
+		while (temp)
+		{
+			if (temp->index == -1
+				&& (!min_node || temp->value < min_node->value))
+				min_node = temp;
+			temp = temp->next;
+		}
+		if (!min_node)
+			break ;
+		min_node->index = i;
+		i++;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	char	**tokens;
-	int		token_count;
 
-	token_count = 0;
-	if (argc == 1)
-	{
-		printf("Error: no arguments.\n");
-		return (0);
-	}
-	stack_a = NULL;
 	stack_b = NULL;
-	argv++;
-	args_verif(argv);
-	while (--argc)
-	{
-		tokens = ft_split(*argv, ' ');
-		if (!tokens || !tokens[0])
-		{
-			free_string_array(tokens);
-			exit(1);
-		}
-		if(!ft_isvalid_integer_str(*tokens))
-		{
-			free_string_array(tokens);
-			exit (0);
-		}
-		stack_add(&stack_a, tokens);
-		free_string_array(tokens);
-		// free_stack_exit(stack_a, 0);		// (needs special condition for 3??????)
-		argv++;
-		token_count++;
-	}
-	if (token_count == 0)
-	{
-		free_stack_exit(stack_a, 0);
-		return (0);
-	}
-	if (is_sorted(&stack_a))
+	stack_a = parse_arguments(argc, argv);
+	if (!is_input_valid(stack_a))
 	{
 		free_stack_exit(stack_a, 0);
 		return (0);
@@ -92,4 +88,3 @@ int	main(int argc, char **argv)
 	free_stack_exit(stack_a, 0);
 	return (0);
 }
-	

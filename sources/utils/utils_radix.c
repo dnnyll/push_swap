@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:46:14 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/27 10:58:11 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/03/31 16:23:36 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,31 +47,13 @@ int	get_stack_size(t_stack *stack)
 	return (count);
 }
 
-// returns the higher value in the stack
-// int get_max_value_index(t_stack *stack)
-// {
-// 	int max_value_index = stack->index;  // Start with the first element's index
-// 	int max_value = stack->value;         // Start with the first element's value
-
-// 	while (stack)
-// 	{
-// 		if (stack->value > max_value)  // If the current node's value is greater than the max value
-// 		{
-// 			max_value = stack->value; // Update max value
-// 			max_value_index = stack->index;  // Update the index of the max value
-// 		}
-// 		stack = stack->next;
-// 	}
-// 	return (max_value_index);
-// }
-
-int get_min_index(t_stack *stack)
+int	get_min_index(t_stack *stack)
 {
-	int	min_index;
-	
-	min_index = stack->index;
-	t_stack *current = stack->next;
+	int		min_index;
+	t_stack	*current;
 
+	min_index = stack->index;
+	current = stack->next;
 	while (current)
 	{
 		if (current->index < min_index)
@@ -81,18 +63,18 @@ int get_min_index(t_stack *stack)
 	return (min_index);
 }
 
-// int	get_max_value(t_stack *stack)
-// {
-// 	int max_value;
+//	 return -1 should never happen if index exists
+int	get_position_of_index(t_stack *stack, int target_index)
+{
+	int	pos;
 
-// 	max_value = stack->value;
-// 	while (stack)
-// 	{
-// 		if (stack->value > max_value)
-// 			max_value = stack->value;
-// 		stack = stack->next;
-// 	}
-// 	return (max_value);
-// }
-
- 
+	pos = 0;
+	while (stack)
+	{
+		if (stack->index == target_index)
+			return (pos);
+		stack = stack->next;
+		pos++;
+	}
+	return (-1);
+}

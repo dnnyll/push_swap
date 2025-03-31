@@ -6,7 +6,7 @@
 #    By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/01 16:19:39 by daniefe2          #+#    #+#              #
-#    Updated: 2025/03/29 10:58:00 by daniefe2         ###   ########.fr        #
+#    Updated: 2025/03/31 14:48:40 by daniefe2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,16 +22,16 @@ LIB = -L $(LIBFT_DIR) -lft
 # Source files
 SRCS =	sources/main.c \
 		sources/algorithm/sort_radix.c \
-		sources/utils/utils_printers.c \
+		sources/algorithm/sort_small.c \
 		sources/utils/utils_stack.c \
 		sources/utils/utils_radix.c \
-		sources/sort_stack_a.c \
-		sources/sort_index.c \
 		sources/operations/push.c \
 		sources/operations/reverse_rotate.c \
 		sources/operations/rotation.c \
 		sources/operations/swap.c \
-		sources/input_management/args_verifier.c \
+		sources/input_management/character_verifier.c \
+		sources/input_management/input_verif.c \
+		sources/input_management/stack_add.c \
 		lib/get_next_line/get_next_line_utils.c \
 		lib/get_next_line/get_next_line.c \
 
