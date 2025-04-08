@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniefe2 <daniefe2@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:33:26 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/31 16:29:05 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/04/08 19:23:37 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		is_sorted(t_stack **stack_a);
 t_stack	*parse_arguments(int argc, char **argv);
 int		is_input_valid(t_stack *stack_a);
 
-//	-=	algorithm				//////////////////////////////////////////////
+//	-=	algorithm			//////////////////////////////////////////////
 int		sort_small(t_stack **stack_a, t_stack **stack_b);
 int		radix_sort(t_stack **stack_a, t_stack **stack_b);
 int		sort_stack(t_stack **stack_a, t_stack **stack_b);
@@ -65,7 +65,7 @@ void	sort_two_elements(t_stack **stack_a);
 void	sort_three_elements(t_stack **stack_a);
 void	sort_four_five_elements(t_stack **stack_a, t_stack **stack_b);
 
-//	-=	operations				//////////////////////////////////////////////
+//	-=	operations			//////////////////////////////////////////////
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
 int		reverse_rotate(t_stack **stack);
