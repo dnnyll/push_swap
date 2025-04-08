@@ -37,15 +37,14 @@ t_stack	*parse_arguments(int argc, char **argv)
 
 	token_count = 0;
 	if (argc == 1)
-	{
-		ft_printf("Error: no arguments.\n");
-		return (NULL);
-	}
+		return (0);
 	stack_a = NULL;
 	argv++;
 	args_verif(argv);
 	while (--argc)
 	{
+		if (**argv == '\0')
+			free_stack_exit(0, 1);
 		tokens = ft_split(*argv, ' ');
 		if (!process_token(tokens, &stack_a))
 			free_stack_exit(stack_a, 1);

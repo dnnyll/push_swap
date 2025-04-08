@@ -6,7 +6,7 @@
 #    By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/01 16:19:39 by daniefe2          #+#    #+#              #
-#    Updated: 2025/03/31 14:48:40 by daniefe2         ###   ########.fr        #
+#    Updated: 2025/04/02 09:30:49 by daniefe2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,4 +59,4 @@ test: all
 	./fdf
 	
 leaks: all
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./fdf maps/test_maps/mars.fdf ./$(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf maps/test_maps/mars.fdf ./$(NAME)

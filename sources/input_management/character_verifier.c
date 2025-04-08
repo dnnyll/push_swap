@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 20:29:47 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/31 14:37:55 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/04/02 07:59:33 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,7 @@ int	args_verif(char **argv)
 		while (argv[i][j])
 		{
 			if (!ft_isvalid_char(argv[i][j]))
-			{
-				ft_printf("error: invalid char found -> %c\n", argv[i][j]);
 				exit(EXIT_FAILURE);
-				return (0);
-			}
 			j++;
 		}
 		i++;
