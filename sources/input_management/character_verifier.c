@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   character_verifier.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniefe2 <daniefe2@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 20:29:47 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/04/02 07:59:33 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:40:20 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,10 @@ int	args_verif(char **argv)
 		while (argv[i][j])
 		{
 			if (!ft_isvalid_char(argv[i][j]))
+			{
+				ft_putendl_fd(("Error"), 2);
 				exit(EXIT_FAILURE);
+			}
 			j++;
 		}
 		i++;

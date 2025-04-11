@@ -19,9 +19,11 @@ static int	process_token(char **tokens, t_stack **stack_a)
 		free_string_array(tokens);
 		return (0);
 	}
+	if (tokens[i][0] == '-' && (tokens[i][1] != ft_is num && not empty ))
 	if (!ft_isvalid_integer_str(*tokens))
 	{
 		free_string_array(tokens);
+		// ft_putendl_fd(("Error"), 2);
 		return (0);
 	}
 	stack_add(stack_a, tokens);

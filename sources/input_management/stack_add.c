@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_add.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniefe2 <daniefe2@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 14:46:29 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/31 14:48:11 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:40:51 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ int	add_value_to_stack(t_stack **stack, int value)
 	t_stack	*last_node;
 
 	if (duplicate_check(*stack, value) == 1)
+	{
+		ft_putendl_fd(("Error"), 2);
 		return (0);
+	}
 	new_node = create_stack_node(value);
 	if (!new_node)
 		return (0);

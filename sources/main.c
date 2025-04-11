@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniefe2 <daniefe2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniefe2 <daniefe2@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:19:12 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/03/31 14:27:26 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:41:17 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	free_stack_exit(t_stack *stack, int error_flag)
 		stack = temp;
 	}
 	if (error_flag)
-		ft_printf("Error\n");
+		ft_putendl_fd(("Error"), 2);
 	exit(0);
 }
 
