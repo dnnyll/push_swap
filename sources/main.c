@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:19:12 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/04/11 15:41:17 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/04/13 15:30:55 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,12 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-
-	stack_b = NULL;
+	if (argc == 1)
+	{
+		ft_putendl_fd(("Error"), 2);
+		return (0);
+	}
+		stack_b = NULL;
 	stack_a = parse_arguments(argc, argv);
 	if (!is_input_valid(stack_a))
 	{

@@ -14,17 +14,27 @@
 
 static int	process_token(char **tokens, t_stack **stack_a)
 {
+	int	i;
+
+	i = 0;
 	if (!tokens || !tokens[0])
 	{
 		free_string_array(tokens);
 		return (0);
 	}
-	if (tokens[i][0] == '-' && (tokens[i][1] != ft_is num && not empty ))
-	if (!ft_isvalid_integer_str(*tokens))
+	while (tokens[i])
 	{
-		free_string_array(tokens);
-		// ft_putendl_fd(("Error"), 2);
-		return (0);
+		if (tokens[i][0] == '-' && tokens[i][1] == '\0')
+		{
+			free_string_array(tokens);
+			return (0);
+		}
+		if (!ft_isvalid_integer_str(tokens[i]))
+		{
+			free_string_array(tokens);
+			return (0);
+		}
+		i++;
 	}
 	stack_add(stack_a, tokens);
 	free_string_array(tokens);
@@ -38,8 +48,6 @@ t_stack	*parse_arguments(int argc, char **argv)
 	int		token_count;
 
 	token_count = 0;
-	if (argc == 1)
-		return (0);
 	stack_a = NULL;
 	argv++;
 	args_verif(argv);
