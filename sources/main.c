@@ -6,7 +6,7 @@
 /*   By: daniefe2 <daniefe2@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 16:19:12 by daniefe2          #+#    #+#             */
-/*   Updated: 2025/04/13 15:30:55 by daniefe2         ###   ########.fr       */
+/*   Updated: 2025/04/16 10:15:35 by daniefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,21 @@ void	assign_index(t_stack *stack)
 		i++;
 	}
 }
+// The program must only output a list of instructions to sort the numbers
+// if input is valid and not already sorted.
+// The subject defines error cases as:
+//	Invalid input (non-integer, overflow)
+//	Duplicates
+//	Invalid format (e.g., spaces in weird places)
 
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+
 	if (argc == 1)
-	{
-		ft_putendl_fd(("Error"), 2);
 		return (0);
-	}
-		stack_b = NULL;
+	stack_b = NULL;
 	stack_a = parse_arguments(argc, argv);
 	if (!is_input_valid(stack_a))
 	{
